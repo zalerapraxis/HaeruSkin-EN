@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>[FFXIV:ACT]HAERUSKIN REBOOT</title>
+    <script src="myData.txt"></script>
+    <link rel="stylesheet" type="text/css" href="css/HaeruSkin.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <script src="lib/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="lib/jquery-latest.js" type="text/javascript"></script>
+    <script src="lib/jquery.marquee.js" type="text/javascript"></script>
+    <script src="lib/HaeruSkin.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <table id="error" class="hidden"></table>
+
+    <div id="wrap">
+        <div id="Header">
+            <span class="mainList"><div id="nav-icon"> <span></span> <span></span> <span></span> <span></span></div><input class="toggle__input" id="toggle-mainMenu" type="checkbox"></span>
+        <span class="mobList"><input class="toggle__input" id="toggle-mobList" type="checkbox"></span>
+        <span class="toggleBtn"><div class="toggle"><input class="toggle__input" id="toggle-checkbox" type="checkbox"><div class="div_label"></div><div class="after_div_label"></div></div></span>
+    </div>
+
+    <table id="menu" cellspacing="0" class="hidden">
+        <tr>
+            <td onclick='menuTabSwap(1)' rel='tooltip' title=''><img src='images/menu/tabDPS.svg' class='menuIcon' id='DPS' /></td>
+            <td onclick='menuTabSwap(2)' rel='tooltip' title=''><img src='images/menu/tabHPS.svg' class='menuIcon' id='HPS' /></td>
+            <td onclick='menuTabSwap(3)' rel='tooltip' title=''><img src='images/menu/user.svg' class='menuIcon' id='User' /></td>
+            <td onclick='menuTabSwap(4)' rel='tooltip' title=''><img src='images/menu/settings.svg' class='menuIcon' id='Settings' /></td>
+        </tr>
+        <tr>
+            <td rel='tooltip' title='' onclick="toggle_img_Resolution('DPI', 'images/menu/HD.svg', 'images/menu/expandFHD.svg','images/menu/expandQHD.svg','images/menu/expandUHD.svg');"><img src='images/menu/HD.svg' class='menuIcon' name='DPI' /></td>
+            <td rel='tooltip' title='' onclick="toggle_img_Color('Color', 'images/menu/graph1.svg', 'images/menu/graph2.svg', 'images/menu/graph3.svg', 'images/menu/graph4.svg', 'images/menu/graph5.svg');"><img src='images/menu/graph1.svg' class='menuIcon' name='Color' /></td>
+            <td rel='tooltip' title='' onclick="toggle_img('number','images/menu/float.svg','images/menu/int.svg');"><img src='images/menu/float.svg' class='menuIcon' name='number' /></td>
+            <td rel='tooltip' title='' onclick="toggle_img('Pet','images/menu/petAdd.svg','images/menu/petSub.svg');"><img src='images/menu/petAdd.svg' class='menuIcon' name='Pet' /></td>
+        </tr>
+        <tr>
+            <td rel='tooltip' title='' onclick="toggle_img('Cells','images/menu/cellReduce.svg','images/menu/cellExpand.svg');"><img src='images/menu/cellReduce.svg' class='menuIcon' name='Cells' /></td>
+            <td rel='tooltip' title='' onclick="toggle_img_Opacity('Opacity', 'images/menu/bg1.svg', 'images/menu/bg2.svg','images/menu/bg3.svg','images/menu/bg4.svg');"><img src='images/menu/bg1.svg' class='menuIcon' name='Opacity' /></td>
+            <td rel='tooltip' title='' onclick="toggle_img('Language','images/menu/kor.svg','images/menu/eng.svg');"><img src='images/menu/kor.svg' class='menuIcon' name='Language' /></td>
+            <td rel='tooltip' title='' onclick='menuTabSwap(5)'><img src='images/menu/meter.svg' class='menuIcon' id='Solo' /></td>
+        </tr>
+    </table>
+
+    <div id="block">
+        <div class="loading">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 124 124">
+    <circle id="circle" class="circle-bg" cx="62" cy="62" r="59" />
+    <circle id="circle" class="circle-color" cx="62" cy="62" r="59" transform="rotate(-90 62 62)" />
+    <polyline id="check" class="check" points="73.56 48.63 57.88 72.69 49.38 62" />
+  </svg>
+        </div>
+        <div id="text1"></div>
+        <div id="text2"></div>
+    </div>
+
+    <div id="tableHeader">
+        <div id="headerData"></div>
+    </div>
+    <div id="Contents">
+        <div id="tableContents">
+            <div id="contentsData"></div>
+        </div>
+        <div id="barContents">
+            <div id="barData"></div>
+        </div>
+    </div>
+
+    <table id='soloTable' class="hidden">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rel="tooltip" title="P.DPS (P.Time)"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan='3'></td>
+            <td colspan='2'></td>
+        </tr>
+        <tr>
+            <td colspan='3'>
+                <div id="line-graph">
+                    <svg viewBox="0 0 500 100">
+    <polyline id="line"
+      fill="none"
+      stroke="#ffbb00"
+      stroke-width="1" />
+  </svg></div>
+            </td>
+            <td colspan='2'></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rel="tooltip" title="Top DPS"></td>
+            <td></td>
+        </tr>
+    </table>
+
+    </div>
+
+</body>
+
+</html>
